@@ -12,10 +12,12 @@ from math import sqrt, pi
 import numpy as np
 import sympy as sp
 from sympy import Matrix, symbols, atan, sqrt
-NDXALA004 APG4005F – Tutorial 1
- Xb, Xc, Xd, Xe, Yb, Yc, Yd, Ye = symbols('Xb Xc Xd Xe Yb Yc Yd Ye', real = True)
+
+Xb, Xc, Xd, Xe, Yb, Yc, Yd, Ye = symbols('Xb Xc Xd Xe Yb Yc Yd Ye', real = True)
 #observation equations
-l1 = sp.atan((Xd-Xc)/(Yd-Yc)) + pi - sp.atan((Xb-Xc)/(Yb-Yc)) l2 = sp.atan((Xe-Xd)/(Ye-Yd)) + pi - sp.atan((Xc-Xd)/(Yc-Yd)) l3 = sp.atan((Xe-Xd)/(Ye-Yd))
+l1 = sp.atan((Xd-Xc)/(Yd-Yc)) + pi - sp.atan((Xb-Xc)/(Yb-Yc)) 
+l2 = sp.atan((Xe-Xd)/(Ye-Yd)) + pi - sp.atan((Xc-Xd)/(Yc-Yd)) 
+l3 = sp.atan((Xe-Xd)/(Ye-Yd))
 l4 = sp.atan((Xc-Xb)/(Yc-Yb))
 l5 = sp.sqrt(((Xc-Xb)**2) + ((Yc-Yb)**2))
 l6 = sp.sqrt(((Xd-Xc)**2) + ((Yd-Yc)**2))
@@ -40,4 +42,5 @@ NIn = np.linalg.inv(n) #invert N
 u = A.T*P*w
 sigma = -NIn*u
 final_coords = Y + sigma
-fc = np.array(final_coords).astype(np.float64) print(fc)
+fc = np.array(final_coords).astype(np.float64) 
+print(fc)
